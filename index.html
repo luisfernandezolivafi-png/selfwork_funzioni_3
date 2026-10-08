@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selfwork Funzioni 3</title>
+</head>
+<body>
+
+    <script>
+        function contaCifre(numero) {
+            if (!Number.isInteger(numero) || numero < 1) {
+                return "Numero non valido";
+            }
+
+            if (numero > 9999) {
+                return "Numero troppo grande";
+            }
+
+            let cifre = 0;
+
+            while (numero > 0) {
+                numero = Math.floor(numero / 10);
+                cifre++;
+            }
+
+            if (cifre === 1) {
+                return `${cifre} cifra`;
+            } else {
+                return `${cifre} cifre`;
+            }
+        }
+
+        console.log(contaCifre(9));
+        console.log(contaCifre(99));
+        console.log(contaCifre(12000));
+    </script>
+</body>
+</html>
